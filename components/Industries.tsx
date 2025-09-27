@@ -28,7 +28,7 @@ const industriesData = [
   {
     title: 'Automotive',
     description: 'Delivering robust and reliable motor solutions for critical automotive systems, from ADAS to next-generation EV propulsion.',
-    imageUrl: '/images/automotive trends 2025.jpeg',
+    imageUrl: 'images/automotive trends 2025.jpeg',
   },
   {
     title: 'Consumer Electronics',
@@ -38,7 +38,7 @@ const industriesData = [
   {
     title: 'Industrial & Aerospace',
     description: 'Developing custom, high-performance motors for challenging environments like defense, aerospace, and agricultural machinery.',
-    imageUrl: '/images/drone-shot-tractor-spraying-lush-600nw-2464594961.webp',
+    imageUrl: 'images/drone-shot-tractor-spraying-lush-600nw-2464594961.webp',
   },
 ];
 

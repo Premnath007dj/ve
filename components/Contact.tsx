@@ -68,12 +68,11 @@ const ContactPage = () => {
         try {
             const scriptURL = GOOGLE_SHEETS_CONFIG.WEB_APP_URL;
             
-            // CRITICAL FIX: Send data as a JSON string, which the Google Apps Script expects.
             await fetch(scriptURL, {
                 method: 'POST',
                 body: JSON.stringify(formData),
                 headers: { 'Content-Type': 'application/json' },
-                mode: 'no-cors' // Use 'no-cors' for basic requests to Google Scripts to avoid CORS errors
+                mode: 'no-cors' 
             });
             
             setIsSubmitted(true); // Show success message
@@ -91,21 +90,21 @@ const ContactPage = () => {
     if (isSubmitted) {
         return (
             <section id="contact-success" className="py-24 bg-charcoal-bg flex items-center justify-center min-h-screen">
-                 <div className="max-w-2xl mx-auto px-6 text-center">
-                    <div className="bg-paper-white/5 border border-paper-white/10 rounded-sm p-12 animate-unfold">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-saffron-yellow mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+               <div className="max-w-2xl mx-auto px-6 text-center">
+                   <div className="bg-paper-white/5 border border-paper-white/10 rounded-sm p-12 animate-unfold">
+                       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-saffron-yellow mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <h2 className="text-4xl font-bold font-display text-heading-text mb-4">Message Sent!</h2>
-                        <p className="text-slate-text text-lg mb-8">Thank you for your inquiry. We'll get back to you shortly.</p>
-                        <button 
-                            onClick={() => setIsSubmitted(false)}
-                            className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm text-base hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
-                        >
-                            Send Another Message
-                        </button>
-                    </div>
-                </div>
+                       </svg>
+                       <h2 className="text-4xl font-bold font-display text-heading-text mb-4">Message Sent!</h2>
+                       <p className="text-slate-text text-lg mb-8">Thank you for your inquiry. We'll get back to you shortly.</p>
+                       <button 
+                           onClick={() => setIsSubmitted(false)}
+                           className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm text-base hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
+                       >
+                           Send Another Message
+                       </button>
+                   </div>
+               </div>
             </section>
         );
     }
@@ -125,20 +124,20 @@ const ContactPage = () => {
                         <ContactInfoItem 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
                             title="Email Us"
-                            value="projects@yourdomain.com"
-                            href="mailto:projects@yourdomain.com"
+                            value="info@veenusnova.com"
+                            href="mailto:info@veenusnova.com"
                         />
                         <ContactInfoItem 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
-                            title="Call Us"
-                            value="+91 123 456 7890"
-                            href="tel:+911234567890"
+                            title="Call or WhatsApp"
+                            value="+91 8220861598"
+                            href="https://wa.me/918220861598"
                         />
-                         <ContactInfoItem 
+                        <ContactInfoItem 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
                             title="Find Us"
-                            value="Hyderabad, Telangana, India"
-                            href="https://www.google.com/maps/search/?api=1&query=Hyderabad+Telangana+India"
+                            value="4/4 R.B Complex, Perumal Kovil Thottam, Kannankurichi, Salem - 636008"
+                            href="https://www.google.com/maps/search/?api=1&query=Perumal+Kovil+thottam+Kannankurichi+Salem"
                         />
                     </div>
 
