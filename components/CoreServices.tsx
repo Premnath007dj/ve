@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DesignIcon: React.FC<{className?: string}> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -37,10 +38,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
       </div>
       <h3 className="text-2xl font-bold font-display text-heading-text mb-4">{title}</h3>
       <p className="text-slate-text leading-relaxed mb-6">{description}</p>
-      <a href="services" className="font-bold text-saffron-yellow hover:text-opacity-80 transition-all inline-flex items-center group/link">
+      <Link to="/services" className="font-bold text-saffron-yellow hover:text-opacity-80 transition-all inline-flex items-center group/link">
           Learn More
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform transition-transform duration-300 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </a>
+        </Link>
     </div>
   );
 };
