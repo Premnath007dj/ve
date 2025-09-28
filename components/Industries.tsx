@@ -15,7 +15,7 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ title, description, imageUr
       <h3 className="text-2xl font-bold font-display mb-2 text-heading-text">{title}</h3>
       <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full transition-all duration-500 ease-out delay-100">
         <p className="text-paper-white mb-4 font-medium">{description}</p>
-        <a href="/#contact" className="font-bold text-saffron-yellow hover:text-opacity-80 transition-all inline-flex items-center group/link">
+        <a href="contact" className="font-bold text-saffron-yellow hover:text-opacity-80 transition-all inline-flex items-center group/link">
           Explore Solutions
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform transition-transform duration-300 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>

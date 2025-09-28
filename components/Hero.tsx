@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
                   We engineer the future of motion. From abstract ideas to validated prototypes, our expertise in electric motor design unfolds your project's full potential.
                 </p>
                 <a 
-                  href="/#contact" 
+                  href="#contact" 
                   className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-4 px-12 rounded-sm text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg shadow-saffron-yellow/10 hover:shadow-xl hover:shadow-saffron-yellow/30 animate-fade-in"
                   style={{animationDelay: '600ms'}}
                 >
