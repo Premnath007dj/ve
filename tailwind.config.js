@@ -25,6 +25,9 @@ export default {
         'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
         'slide-in-right': 'slideInRight 0.8s ease-out forwards',
         'fill-bar': 'fillBar 1.5s ease-out forwards',
+        'jiggle': 'jiggle 0.5s ease-in-out',
+        'spin-slow': 'spin 10s linear infinite',
+        'spin-reverse-medium': 'spin-reverse 5s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -49,6 +52,18 @@ export default {
         fillBar: {
           'from': { width: '0%' },
           'to': { width: '100%' },
+        },
+        jiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        spin: {
+          'from': { transform: 'rotate(0deg)' },
+          'to': { transform: 'rotate(360deg)' },
+        },
+        'spin-reverse': {
+          'from': { transform: 'rotate(360deg)' },
+          'to': { transform: 'rotate(0deg)' },
         },
       }
     }

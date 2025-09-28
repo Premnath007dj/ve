@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TextReveal from './TextReveal';
 
 const DesignIcon: React.FC<{className?: string}> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -69,7 +70,7 @@ const CoreServices: React.FC = () => {
     <section id="services" className="py-24 bg-charcoal-bg/50 relative overflow-hidden">
       <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16 animate-unfold">
-          <h2 className="text-4xl lg:text-5xl font-bold font-display text-heading-text">Our Core <span className="text-saffron-yellow">Services</span></h2>
+          <TextReveal text="Our Core Services" className="text-4xl lg:text-5xl font-bold font-display text-heading-text" />
           <p className="text-lg text-slate-text mt-4 max-w-2xl mx-auto">An integrated process for developing next-generation electric motors.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

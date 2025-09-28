@@ -1,4 +1,5 @@
 import React from 'react';
+import ParticleCanvas from './ParticleCanvas';
 
 const AnimatedMotorGraphic: React.FC = () => (
     <svg viewBox="0 0 200 200" className="w-full h-full max-w-md mx-auto">
@@ -58,6 +59,7 @@ const AnimatedMotorGraphic: React.FC = () => (
 const Hero: React.FC = () => {
   return (
     <section id="home" className="relative text-heading-text min-h-screen flex items-center justify-center overflow-hidden bg-charcoal-bg">
+      <ParticleCanvas />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="max-w-xl text-center md:text-left">
@@ -70,7 +72,7 @@ const Hero: React.FC = () => {
                 </p>
                 <a 
                   href="#contact" 
-                  className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-4 px-12 rounded-sm text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg shadow-saffron-yellow/10 hover:shadow-xl hover:shadow-saffron-yellow/30 animate-fade-in"
+                  className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-4 px-12 rounded-sm text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg shadow-saffron-yellow/10 hover:shadow-xl hover:shadow-saffron-yellow/30 animate-fade-in shimmer"
                   style={{animationDelay: '600ms'}}
                 >
                   Begin Your Blueprint
@@ -91,5 +93,6 @@ const Hero: React.FC = () => {
     </section>
   );
 };
+
 
 export default Hero;

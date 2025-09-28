@@ -1,4 +1,5 @@
 import React from 'react';
+import TextReveal from './TextReveal';
 
 interface PropositionItemProps {
   title: string;
@@ -62,7 +63,7 @@ const ValueProposition: React.FC = () => {
         `}</style>
       <div className="container mx-auto px-6 relative grid lg:grid-cols-3 gap-8 lg:gap-16 items-center">
         <div className="lg:col-span-1 z-10 animate-unfold text-center lg:text-left mb-12 lg:mb-0">
-             <h2 className="text-4xl lg:text-5xl font-bold font-display text-heading-text">Engineered <span className="text-saffron-yellow">Certainty</span></h2>
+             <TextReveal text="Engineered Certainty" className="text-4xl lg:text-5xl font-bold font-display text-heading-text" />
             <p className="text-lg text-slate-text mt-4">We transform technical excellence into tangible benefits that drive your success.</p>
         </div>
         <div className="lg:col-span-2 z-10">

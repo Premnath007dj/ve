@@ -1,4 +1,5 @@
 import React from 'react';
+import TextReveal from './TextReveal';
 
 interface IndustryCardProps {
   title: string;
@@ -9,7 +10,7 @@ interface IndustryCardProps {
 const IndustryCard: React.FC<IndustryCardProps> = ({ title, description, imageUrl }) => (
   <div className="group relative rounded-sm overflow-hidden aspect-[4/3] bg-charcoal-bg">
     <img src={imageUrl} alt={title} className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110" style={{clipPath: 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)'}}/>
-    <div className="absolute inset-0 bg-gradient-to-t from-saffron-yellow via-saffron-yellow to-charcoal-bg mix-blend-hard-light opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="absolute inset-0 bg-saffron-yellow/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
     <div className="absolute inset-0 p-6 flex flex-col justify-end transform translate-y-1/2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
       <h3 className="text-2xl font-bold font-display mb-2 text-heading-text">{title}</h3>
@@ -47,7 +48,7 @@ const Industries: React.FC = () => {
     <section id="industries" className="py-24 bg-charcoal-bg">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-unfold">
-          <h2 className="text-4xl lg:text-5xl font-bold font-display text-heading-text">Precision in Practice, Across <span className="text-saffron-yellow">Industries</span></h2>
+          <TextReveal text="Precision in Practice, Across Industries" className="text-4xl lg:text-5xl font-bold font-display text-heading-text" />
           <p className="text-lg text-slate-text mt-4 max-w-2xl mx-auto">We possess deep expertise across a wide range of demanding sectors.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

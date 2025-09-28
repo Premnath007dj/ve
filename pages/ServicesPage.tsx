@@ -30,12 +30,12 @@ export const DETAILED_SERVICES_DATA: DetailedService[] = [
     { icon: <ThreeDPrinterIcon />, title: '3D Printing Services', description: 'Bring your digital designs to life with reliable and affordable 3D printing for a wide range of applications.', subPoints: ['Rapid Prototyping', 'Functional Parts & Enclosures', 'High-Resolution Models', 'Multiple Material Options (PLA, ABS, PETG)'], image: 'images/360_F_449308752_xkBGspiOsbAADCkET4ihyznpJ8POHmys.jpg' },
 ];
 
-const ServiceContentCard: React.FC<Omit<DetailedService, 'image'>> = ({ icon, title, description, subPoints }) => {
+const ServiceContentCard: React.FC<Omit<DetailedService, 'image'> & { isHovered: boolean }> = ({ icon, title, description, subPoints, isHovered }) => {
   return (
-    <div className="group h-full p-8 bg-charcoal-bg border border-paper-white/10 rounded-sm transition-all duration-300 transform-gpu hover:-translate-y-2 hover:border-saffron-yellow/50 hover:shadow-2xl hover:shadow-charcoal-bg/50">
+    <div className={`group h-full p-8 bg-charcoal-bg border border-paper-white/10 rounded-sm transition-all duration-500 transform-gpu ${isHovered ? 'scale-105 border-saffron-yellow/50 shadow-2xl shadow-charcoal-bg/50' : ''}`}>
       <div className="flex items-center mb-4">
-        <div className="flex items-center justify-center h-12 w-12 rounded-sm bg-paper-white/5 text-saffron-yellow border border-paper-white/10 group-hover:border-saffron-yellow/30 transition-all duration-300">
-          <div className="transform transition-transform duration-300 group-hover:scale-110">
+        <div className={`flex items-center justify-center h-12 w-12 rounded-sm bg-paper-white/5 text-saffron-yellow border border-paper-white/10 transition-all duration-300 ${isHovered ? 'border-saffron-yellow/30' : ''}`}>
+          <div className={`transform transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`}>
               {icon}
           </div>
         </div>
@@ -54,10 +54,10 @@ const ServiceContentCard: React.FC<Omit<DetailedService, 'image'>> = ({ icon, ti
   );
 };
 
-const ServiceImageCard: React.FC<{ image: string; title: string; }> = ({ image, title }) => {
+const ServiceImageCard: React.FC<{ image: string; title: string; isHovered: boolean }> = ({ image, title, isHovered }) => {
     return (
-        <div className="group rounded-sm overflow-hidden border border-paper-white/10 transition-all duration-300 transform-gpu hover:-translate-y-2 hover:border-saffron-yellow/50 hover:shadow-2xl hover:shadow-charcoal-bg/50">
-            <img src={image} alt={title} className="w-full" />
+        <div className={`group rounded-sm overflow-hidden border border-paper-white/10 transition-all duration-500 transform-gpu relative animate-unfold ${isHovered ? 'scale-105 border-saffron-yellow/50 shadow-2xl shadow-charcoal-bg/50' : ''}`}>
+            <img src={image} alt={title} className={`w-full transition-transform duration-500 ${isHovered ? 'scale-110' : ''}`} loading="lazy" />
         </div>
     );
 };
@@ -100,10 +100,12 @@ const AnimatedOnScroll: React.FC<{ children: React.ReactNode, animation: string,
 };
 
 const ServicesPage: React.FC = () => {
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section id="services" className="py-24 bg-charcoal-bg/50 relative overflow-hidden">
         <div className="pt-16 pb-10">
-            <div className="text-center">
+            <div className="text-center animate-unfold">
                 <h1 className="text-4xl lg:text-5xl font-bold font-display text-heading-text">From Blueprint to <span className="text-saffron-yellow">Motion</span></h1>
                 <p className="text-lg text-slate-text mt-4 max-w-2xl mx-auto">Our integrated services form a seamless process for developing next-generation electric motors.</p>
             </div>
@@ -113,13 +115,23 @@ const ServicesPage: React.FC = () => {
           {DETAILED_SERVICES_DATA.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+              <div 
+                key={index} 
+                className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center relative"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
                 <AnimatedOnScroll animation="animate-unfold" delay={0} className={`md:col-span-3 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
-                  <ServiceContentCard {...service} />
+                  <ServiceContentCard {...service} isHovered={hoveredIndex === index} />
                 </AnimatedOnScroll>
                 <AnimatedOnScroll animation="animate-unfold" delay={100} className={`md:col-span-2 ${isEven ? 'md:order-2' : 'md:order-1'}`}>
-                  <ServiceImageCard image={service.image} title={service.title} />
+                  <ServiceImageCard image={service.image} title={service.title} isHovered={hoveredIndex === index} />
                 </AnimatedOnScroll>
+                {hoveredIndex === index && (
+                    <svg className="absolute w-full h-full top-0 left-0" style={{ pointerEvents: 'none' }}>
+                        <line x1={isEven ? "75%" : "25%"} y1="50%" x2={isEven ? "25%" : "75%"} y2="50%" stroke="rgba(244, 180, 0, 0.5)" strokeWidth="2" className="animate-draw-path" />
+                    </svg>
+                )}
               </div>
             )
           })}

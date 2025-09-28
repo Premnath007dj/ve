@@ -10,8 +10,8 @@ const Logo: React.FC = () => (
 
 const SocialIcon: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
     // Added target="_blank" to open social links in a new tab
-    <a href={href} target="_blank" rel="noopener noreferrer" className="text-slate-text hover:text-saffron-yellow transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
-        {children}
+    <a href={href} target="_blank" rel="noopener noreferrer" className="text-slate-text hover:text-saffron-yellow transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group">
+        <div className="group-hover:animate-jiggle">{children}</div>
     </a>
 );
 

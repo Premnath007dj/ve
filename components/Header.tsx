@@ -49,10 +49,10 @@ const Header: React.FC = () => {
               style={({ isActive }) => isActive ? activeLinkStyle : undefined}
             >
               {link.name}
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-saffron-yellow transition-all duration-300 group-hover:w-full ${(({ isActive }) => isActive ? 'w-full' : '')}`}></span>
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-saffron-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-center ${(({ isActive }) => isActive ? 'scale-x-100' : '')}`}></span>
             </NavLink>
           ))}
-          <NavLink to="/contact" className="clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-2 px-8 rounded-sm hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-saffron-yellow/20">
+          <NavLink to="/contact" className="clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-2 px-8 rounded-sm hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-saffron-yellow/20 shimmer">
             Project Inquiry
           </NavLink>
         </nav>
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
                   {link.name}
                 </NavLink>
               ))}
-              <NavLink to="/contact" onClick={toggleMenu} className="clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm hover:bg-opacity-90 transition-all transform hover:scale-105 text-lg mt-4">
+              <NavLink to="/contact" onClick={toggleMenu} className="clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm hover:bg-opacity-90 transition-all transform hover:scale-105 text-lg mt-4 shimmer">
                 Project Inquiry
               </NavLink>
           </div>

@@ -99,7 +99,7 @@ const ContactPage = () => {
                        <p className="text-slate-text text-lg mb-8">Thank you for your inquiry. We'll get back to you shortly.</p>
                        <button 
                            onClick={() => setIsSubmitted(false)}
-                           className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm text-base hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
+                           className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm text-base hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md hover:shadow-lg shimmer"
                        >
                            Send Another Message
                        </button>
@@ -172,7 +172,7 @@ const ContactPage = () => {
                             </div>
 
                             <div className="text-right pt-2">
-                                <button type="submit" disabled={isSubmitting} className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm text-base hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md hover:shadow-lg disabled:bg-gray-500 disabled:cursor-not-allowed">
+                                <button type="submit" disabled={isSubmitting} className="inline-block clip-parallelogram bg-saffron-yellow text-charcoal-bg font-bold py-3 px-10 rounded-sm text-base hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md hover:shadow-lg disabled:bg-gray-500 disabled:cursor-not-allowed shimmer">
                                     {isSubmitting ? 'Sending...' : 'Send Inquiry'}
                                 </button>
                             </div>
